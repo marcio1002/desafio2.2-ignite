@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 
 export const Container = styled.div`
   background: #f0f0f5;
@@ -7,18 +7,22 @@ export const Container = styled.div`
   header {
     background: #ffb84d;
     border-radius: 8px 8px 0px 0px;
+    width: 100%;
     height: 192px;
     overflow: hidden;
     transition: 0.3s opacity;
     text-align: center;
 
-    ${props =>
-    !props.available &&
-    css`
+    ${(props: { available: boolean }) =>
+      !props.available &&
+      css`
         opacity: 0.3;
       `};
 
     img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
       pointer-events: none;
       user-select: none;
     }
@@ -114,7 +118,7 @@ export const Container = styled.div`
 
           &:before {
             position: absolute;
-            content: '';
+            content: "";
             height: 20px;
             width: 40px;
             left: 8px;
